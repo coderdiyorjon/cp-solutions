@@ -1,11 +1,12 @@
 class Solution(object):
-    def permute(self, nums):
+    def permute(self, nums: list[int]) -> list[list[int]]:
         """
         :type nums: List[int]
         :rtype: List[List[int]]
         """
-        n = len(nums)
-        ans, sol = [],  []
+        n: int = len(nums)
+        ans: list[list[int]] = []
+        sol: list[int] = []
 
         def backtrack():
             if len(sol) == n:

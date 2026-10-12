@@ -1,14 +1,14 @@
 class Solution:
     def minimumPushes(self, word: str) -> int:
         # Total number of characters to type
-        n = len(word)
+        n: int = len(word)
 
         # Current cost (pushes) per character group
         # First 8 chars cost 1 push each, next 8 cost 2, etc.
-        i = 1
+        i: int = 1
 
         # Stores the total number of pushes required
-        count = 0
+        count: int = 0
 
         # Process characters in groups of 8
         while n:

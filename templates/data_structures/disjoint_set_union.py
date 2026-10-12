@@ -7,17 +7,17 @@ Features:
 """
 
 class DSU:
-    def __init__(self, n):
+    def __init__(self, n: int) -> None:
         """Initializes DSU with `n` elements (0 to n - 1).
         
         Time Complexity: O(N)
         Space Complexity: O(N)
         """
-        self.parent = list(range(n))
-        self.size = [1] * n
-        self.components_count = n
-        
-    def find(self, i):
+        self.parent: list[int] = list(range(n))
+        self.size: list[int] = [1] * n
+        self.components_count: int = n
+
+    def find(self, i: int) -> int:
         """Finds the representative (root) of the set containing `i`.
         Applies path compression for O(alpha(N)) amortized time.
         """
@@ -28,14 +28,14 @@ class DSU:
         self.parent[i] = self.find(self.parent[i])
         return self.parent[i]
     
-    def union(self, i, j):
+    def union(self, i: int, j: int) -> bool:
         """Union the sets containing `i` and `j`.
         
         Returns:
             bool: True if they were merged, False if they were already in the same set.
         Time Complexity: O(alpha(N)) amortized
         """
-        root_i = self.find(i)
+        root_i: int = self.find(i)
         root_j = self.find(j)
         
         if root_i == root_j:
@@ -51,10 +51,10 @@ class DSU:
         
         return True
     
-    def get_size(self, i):
+    def get_size(self, i: int) -> int:
         """Returns the size of the set containing element `i`."""
         return self.size[self.find(i)]
     
-    def is_connected(self, i, j):
+    def is_connected(self, i: int, j: int) -> bool:
         """Checks if `i` and `j` belong to the same set."""
         return self.find(i) == self.find(j)

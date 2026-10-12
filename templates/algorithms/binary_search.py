@@ -1,4 +1,4 @@
-def binary_search_exact(arr, target):
+def binary_search_exact(arr: list[int], target: int) -> int:
     """
     Perform binary search on a sorted array to find the index of the target value.
 
@@ -9,10 +9,11 @@ def binary_search_exact(arr, target):
     Returns:
     int: The index of the target value if found, otherwise -1.
     """
-    left, right = 0, len(arr) - 1
+    left: int = 0
+    right: int = len(arr) - 1
 
     while left <= right:
-        mid = left + (right - left) // 2 # Calculate the middle index
+        mid: int = left + (right - left) // 2 # Calculate the middle index
 
         # Check if the target is present at mid
         if arr[mid] == target:
@@ -30,14 +31,15 @@ def binary_search_exact(arr, target):
     return -1
 
 
-def lower_bound(arr, target):
+def lower_bound(arr: list[int], target: int) -> int:
     """
     Finds the first index where arr[index] >= target.
     Returns len(arr) if no such element exists.
     """
-    left, right = 0, len(arr)
+    left: int = 0
+    right: int = len(arr)
     while left < right:
-        mid = (left + right) // 2
+        mid: int = (left + right) // 2
 
         # If mid element is greater than or equal to target, search in the left half
         if arr[mid] >= target:
@@ -49,14 +51,15 @@ def lower_bound(arr, target):
     return left
 
 
-def upper_bound(arr, target):
+def upper_bound(arr: list[int], target: int) -> int:
     """
     Finds the first index where arr[index] > target.
     Returns len(arr) if no such element exists.
     """
-    left, right = 0, len(arr)
+    left: int = 0
+    right: int = len(arr)
     while left < right:
-        mid = (left + right) // 2
+        mid: int = (left + right) // 2
 
         # If mid element is greater than target, search in the left half
         if arr[mid] > target:

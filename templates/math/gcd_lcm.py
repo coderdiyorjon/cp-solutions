@@ -34,11 +34,14 @@ def extended_gcd(a: int, b: int) -> tuple[int, int, int]:
         return a, 1, 0
     
     # Recursive call
+    d: int
+    x1: int
+    y1: int
     d, x1, y1 = extended_gcd(b, a % b)
     
     # Update x and y using results of recursive call
-    x = y1
-    y = x1 - y1 * (a // b)
+    x: int = y1
+    y: int = x1 - y1 * (a // b)
     
     return d, x, y
 
@@ -49,6 +52,9 @@ def solve_linear_dophantine(a: int, b: int, c: int) -> tuple[int, int] | None:
     Returns:
         tuple: (x, y) if a solution exists, else None.
     """
+    g: int
+    x: int
+    y: int
     g, x, y = extended_gcd(abs(a), abs(b))
     
     if c % g != 0:

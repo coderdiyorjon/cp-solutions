@@ -4,7 +4,7 @@ class Solution(object):
         :type s: str
         :rtype: str
         """
-        counter = 1
+        counter: int = 1
         primitiveParenthese = "("
         res: list[str] = []
         for char in s[1:]:

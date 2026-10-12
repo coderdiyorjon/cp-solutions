@@ -5,32 +5,34 @@ Common patterns:
 3. Fixed-Size Sliding Window
 """
 
-def two_pointers_opposite(arr, target):
+from collections.abc import Callable
+
+def two_pointers_opposite(arr: list[int], target: int) -> tuple[int, int]:
     """Opposite ends pattern on a sorted array.
     Time Complexity: O(N)
     Space Complexity: O(1)
     """
-    left = 0
-    right = len(arr) - 1
+    left: int = 0
+    right: int = len(arr) - 1
     
     while left < right:
-        current_sum = arr[left] + arr[right]
+        current_sum: int = arr[left] + arr[right]
         if current_sum == target:
             return left, right
         elif current_sum < target:
             left += 1
         else:
             right -= 1
-        return -1, -1
-    
-def sliding_window_variable(arr, condition_fn):
+    return -1, -1
+
+def sliding_window_variable(arr: list[int], condition_fn: Callable[[dict[int, int]], bool]) -> int:
     """Dynamic-size sliding window(find maximum window satisfying condition).
     Time Complexity: O(N)
     Space Complexity: O(1) or O(K) depending on window state
     """
-    left = 0
-    best_len = 0
-    window_state = {}
+    left: int = 0
+    best_len: int = 0
+    window_state: dict[int, int] = {}
     
     for right in range(len(arr)):
         # 1. Expand: add arr[right] to window_state
@@ -50,7 +52,7 @@ def sliding_window_variable(arr, condition_fn):
     
     return best_len
 
-def sliding_window(arr, k):
+def sliding_window(arr: list[int], k: int) -> int:
     """Fixed-size sliding window of length k.
     Time Complexity: O(N)
     Space Complexity: O(1)
@@ -59,8 +61,8 @@ def sliding_window(arr, k):
         return 0
     
     # Initialize first window of size k.
-    window_sum = sum(arr[:k])
-    max_sum = window_sum
+    window_sum: int = sum(arr[:k])
+    max_sum: int = window_sum
     
     # Slide window one element at a time
     for i in range(k, len(arr)):

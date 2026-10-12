@@ -1,12 +1,13 @@
 class Solution(object):
-    def maxDepth(self, s):
+    def maxDepth(self, s: str) -> int:
         """
         :type s: str
         :rtype: int
         """
         # Mx tracks the maximum depth we've seen so far.
         # count tracks our current depth as we read the string.
-        Mx = count = 0
+        Mx: int = 0
+        count: int = 0
         
         # Iterate through every character in the string
         for char in s:

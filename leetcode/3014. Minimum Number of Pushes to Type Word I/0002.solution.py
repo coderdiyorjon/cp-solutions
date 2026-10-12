@@ -1,7 +1,7 @@
 class Solution:
     def minimumPushes(self, word: str) -> int:
         # Number of characters that need to be typed
-        n = len(word)
+        n: int = len(word)
 
         # Characters are assigned costs in groups of 8:
         # indices 0-7   -> 1 push each

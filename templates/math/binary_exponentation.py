@@ -8,7 +8,7 @@ or understanding the underlyingg algorithm.
 
 def binpow(a: int, b: int) -> int:
     """Calculates a^b in O(log b) time."""
-    res = 1
+    res: int = 1
     while b > 0:
         # If the current power is odd, multiply the result by 'a'
         if b & 1:

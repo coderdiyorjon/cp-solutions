@@ -3,7 +3,7 @@ from typing import List
 class Solution:
     def minimumOperations(self, grid: List[List[int]]) -> int:
         # Initialize the total number of operations required
-        oper_count = 0
+        oper_count: int = 0
         
         # Iterate over each column index 'j'
         for j in range(len(grid[0])):
@@ -12,7 +12,7 @@ class Solution:
                 # If the current element is greater than or equal to the element directly below it
                 if grid[i][j] >= grid[i + 1][j]:
                     # To be strictly increasing, the element below MUST be at least current + 1
-                    target = grid[i][j] + 1
+                    target: int = grid[i][j] + 1
                     
                     # Add the exact difference to our total operations count
                     oper_count += target - grid[i + 1][j]

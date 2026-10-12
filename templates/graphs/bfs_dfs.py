@@ -16,7 +16,7 @@ sys.setrecursionlimit(200000)
 # 1. Adjacency List Traversals
 # ---------------------------------------------------------
 
-def bfs_shortest_path(graph, start):
+def bfs_shortest_path(graph: list[list[int]] | dict[int, list[int]], start: int) -> dict[int, int]:
     """Finds the shortest path from start to all other nodes in an unweighted graph.
     
     Args:
@@ -26,11 +26,11 @@ def bfs_shortest_path(graph, start):
     Returns:
         distances: Dictionary mapping node to its shortest distance from start.
     """
-    distances = {start: 0}
-    queue = deque([start])
+    distances: dict[int, int] = {start: 0}
+    queue: deque[int] = deque([start])
     
     while queue:
-        node = queue.popleft()
+        node: int = queue.popleft()
         
         for neighbor in graph[node]:
             if neighbor not in distances:
@@ -40,7 +40,7 @@ def bfs_shortest_path(graph, start):
     return distances
 
 
-def dfs_recursive(graph, node, visited):
+def dfs_recursive(graph: list[list[int]] | dict[int, list[int]], node: int, visited: set[int]) -> None:
     """Explores the graph completely starting from `node`.
     
     Args:
@@ -62,22 +62,27 @@ def dfs_recursive(graph, node, visited):
 # ---------------------------------------------------------
 
 # Directions: Right, Down, Left, Up (can add diagonals if needed)
-DIRECTIONS = [(0, 1), (1, 0), (0, -1), (-1, 0)]
+DIRECTIONS: list[tuple[int, int]] = [(0, 1), (1, 0), (0, -1), (-1, 0)]
 
-def is_valid(r, c, rows, cols):
+def is_valid(r: int, c: int, rows: int, cols: int) -> bool:
     """Checks if the coordinate is within grid bounds."""
     return 0 <= r < rows and 0 <= c < cols
 
 
-def bfs_grid(grid, start_r, start_c):
+def bfs_grid(grid: list[list[str | int]], start_r: int, start_c: int) -> set[tuple[int, int]]:
     """Traverses a 2D grid using BFS.
     Useful for finding the shortest path out of a maze.
     """
-    rows, cols = len(grid), len(grid[0])
-    visited = set([(start_r, start_c)])
-    queue = deque([(start_r, start_c, 0)]) # (row, col, distances)
+    rows: int = len(grid)
+    cols: int = len(grid[0])
+    visited: set[tuple[int, int]] = set([(start_r, start_c)])
+    queue: deque[tuple[int, int, int]] = deque([(start_r, start_c, 0)]) # (row, col, distances)
     
     while queue:
+        
+        r: int
+        c: int
+        dist: int
         r, c, dist = queue.popleft()
         
         # Check all 4 adjacent directions

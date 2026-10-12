@@ -7,19 +7,19 @@ manual while-loop implementation for list lookups.
 
 from bisect import bisect_left, bisect_right
 
-def binary_search_exact(arr, target):
+def binary_search_exact(arr: list[int], target: int) -> int:
     """Finds the index of the first occurence of `target`.
     Returns:
         int: Index if found, otherwise -1.
     Time Complexity: O(log N)
     """
-    idx = bisect_left(arr, target)
+    idx: int = bisect_left(arr, target)
     if idx < len(arr) and arr[idx] == target:
         return idx
     return -1
 
 
-def lower_bound(arr, target):
+def lower_bound(arr: list[int], target: int) -> int:
     """Finds the first index `i` such that `arr[i] >= target`.
     
     Equivalent to C++ std::lower_bound.
@@ -33,7 +33,7 @@ def lower_bound(arr, target):
     return bisect_left(arr, target)
 
 
-def upper_bound(arr, target):
+def upper_bound(arr: list[int], target: int) -> int:
     """Finds the first index `i` such that `arr[i] > target`.
     
     Equivalent to C++ std::upper_bound.
@@ -46,7 +46,7 @@ def upper_bound(arr, target):
     return bisect_right(arr, target)
 
 
-def count_occurences(arr, target):
+def count_occurences(arr: list[int], target: int) -> int:
     """Counts the total occurences of `target` in a sorted array.
     
     Returns:
@@ -57,7 +57,7 @@ def count_occurences(arr, target):
     return bisect_right(arr, target) - bisect_left(arr, target)
 
 
-def find_predecessor(arr, target):
+def find_predecessor(arr: list[int], target: int) -> int | None:
     """Finds largest element strictly smaller than `target`.
     
     Returns:
@@ -65,11 +65,11 @@ def find_predecessor(arr, target):
         
     Time Complexity: O(log N)
     """
-    idx = bisect_left(arr, target) - 1
+    idx: int = bisect_left(arr, target) - 1
     return arr[idx] if idx >= 0 else None
 
 
-def find_successor(arr, target):
+def find_successor(arr: list[int], target: int) -> int | None:
     """Finds the smallest element strictly greater than `target`.
     
     Returns:
@@ -77,5 +77,5 @@ def find_successor(arr, target):
         
     Time Complexity: O(log N)
     """
-    idx = bisect_right(arr, target)
+    idx: int = bisect_right(arr, target)
     return arr[idx] if idx < len(arr) else None
