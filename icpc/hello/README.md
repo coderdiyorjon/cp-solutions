@@ -1,6 +1,6 @@
 # Intuition
 
-As the introductory problem on ICPC/Kattis, this serves as a sanity check to verify that your submission workflow, Python interpreter version, and standard output (`stdout`) formatting work cleanly with the judge. ```https://icpc.kattis.com/problems/hello```
+As the introductory problem on ICPC/Kattis, this serves as a sanity check to verify that your submission workflow, Python interpreter version, and standard output (`stdout`) formatting work cleanly with the judge. [Problem Source](https://icpc.kattis.com/problems/hello)
 
 # Approach
 

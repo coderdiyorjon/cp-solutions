@@ -1,7 +1,7 @@
 
 # Intuition
 
-Building explicit Binary Search Tree (BST) node structures with pointers isn't strictly necessary just to compare whether two trees have the same shape. In any BST, the first inserted element is always the root. Every subsequent element smaller than the root belongs to the left subtree, and every element larger belongs to the right subtree—maintaining their exact relative insertion order. By recursively partitioning two insertion sequences around their roots, we can check structural equivalence directly on the lists. ```https://icpc.kattis.com/problems/ceiling```
+Building explicit Binary Search Tree (BST) node structures with pointers isn't strictly necessary just to compare whether two trees have the same shape. In any BST, the first inserted element is always the root. Every subsequent element smaller than the root belongs to the left subtree, and every element larger belongs to the right subtree—maintaining their exact relative insertion order. By recursively partitioning two insertion sequences around their roots, we can check structural equivalence directly on the lists. [Problem Source](https://icpc.kattis.com/problems/ceiling)
 
 # Approach
 

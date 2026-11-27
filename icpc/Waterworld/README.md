@@ -2,7 +2,7 @@
 
 At first glance, measuring water coverage on a rotating spherical planet sounds like it requires spherical integration or cosine weighting by latitude. However, the planet's image is sliced into $n$ horizontal bands of **equal height** and $m$ equal rotational steps.
 
-By **Archimedes' Hat-Box Theorem**, the surface area of a spherical zone between two parallel planes depends only on the radius $R$ and the vertical height $h$ between the planes ($A = 2\pi R h$), not on latitude. Even though bands near the poles have a smaller circumference, the sphere's surface tilts more steeply there, compensating for the narrower radius. As a result, all $n \times m$ surface patches have the **exact same surface area**, so the overall water percentage is simply the unweighted arithmetic mean of all $n \times m$ cells.
+By **Archimedes' Hat-Box Theorem**, the surface area of a spherical zone between two parallel planes depends only on the radius $R$ and the vertical height $h$ between the planes ($A = 2\pi R h$), not on latitude. Even though bands near the poles have a smaller circumference, the sphere's surface tilts more steeply there, compensating for the narrower radius. As a result, all $n \times m$ surface patches have the **exact same surface area**, so the overall water percentage is simply the unweighted arithmetic mean of all $n \times m$ cells. [Problem Source](https://icpc.kattis.com/problems/waterworld)
 
 # Approach
 

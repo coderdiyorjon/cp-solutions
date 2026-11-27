@@ -1,6 +1,6 @@
 # Intuition
 
-The floor plan is given as a closed loop of relative cardinal movements (`N`, `S`, `E`, `W`). By anchoring the starting corner at the origin $(0, 0)$ and walking each step, we translate those relative moves into an ordered list of 2D polygon vertices. Once we have the vertices in perimeter order, the **Shoelace Formula** directly yields the exact enclosed area—even if the floor is highly concave or irregularly shaped. ```https://icpc.kattis.com/problems/hardflor```
+The floor plan is given as a closed loop of relative cardinal movements (`N`, `S`, `E`, `W`). By anchoring the starting corner at the origin $(0, 0)$ and walking each step, we translate those relative moves into an ordered list of 2D polygon vertices. Once we have the vertices in perimeter order, the **Shoelace Formula** directly yields the exact enclosed area—even if the floor is highly concave or irregularly shaped. [ProblemSource](https://icpc.kattis.com/problems/hardflor)
 
 # Approach
 
