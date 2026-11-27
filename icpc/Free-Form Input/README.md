@@ -1,6 +1,6 @@
 # Intuition
 
-Standard numeric parsers fail on "free-form" comma-separated input when whitespace appears *inside* a number (for example, between a sign and digits or between digits themselves). Because commas unambiguously separate values on each line, the problem reduces to splitting on `,`, stripping out all spaces from each token, and summing the parsed floating-point numbers line by line until EOF. [text](https://icpc.kattis.com/problems/freeforminput)
+Standard numeric parsers fail on "free-form" comma-separated input when whitespace appears *inside* a number (for example, between a sign and digits or between digits themselves). Because commas unambiguously separate values on each line, the problem reduces to splitting on `,`, stripping out all spaces from each token, and summing the parsed floating-point numbers line by line until EOF. [Problem Source](https://icpc.kattis.com/problems/freeforminput)
 
 # Approach
 
