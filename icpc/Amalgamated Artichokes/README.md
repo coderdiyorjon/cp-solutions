@@ -2,14 +2,14 @@ Given integer parameters $p, a, b, c, d$ and a sample count $n$, stock prices at
 
 $$\text{price}(k) = p \cdot \bigl(\sin(a \cdot k + b) + \cos(c \cdot k + d) + 2\bigr)$$
 
-Find the maximum price decline $\text{price}(i) - \text{price}(j)$ over all pairs $1 \le i \lt j \le n$, or `0.000000` if the price never decreases. [Problem Source](https://icpc.kattis.com/problems/artichoke)
+Find the maximum price decline $\text{price}(i) - \text{price}(j)$ over all pairs $1 \le i \lt j \le n$, or `0.000000` if the price never decreases.
 ---
 
 ## Approach 1: Array-Based Running Maximum
 
 ### Intuition
 
-For any point in time $j$, the largest possible decline ending at $j$ must start from the highest price observed at any earlier time $i \lt j$. Tracking a single running maximum as we scan left to right finds the worst drop in linear time without comparing all pairs.
+For any point in time $j$, the largest possible decline ending at $j$ must start from the highest price observed at any earlier time $i \lt j$. Tracking a single running maximum as we scan left to right finds the worst drop in linear time without comparing all pairs. [Problem Source](https://icpc.kattis.com/problems/artichoke)
 
 ### Approach
 
@@ -65,7 +65,7 @@ $$e^{i(a(k+1) + b)} = e^{i(ak + b)} \cdot e^{ia}$$
 
 
 
-Python executes `z *= step` in C, giving $\sin(ak + b)$ as `z1.imag` and $\cos(ck + d)$ as `z2.real` without calling `sin()` or `cos()` inside the inner loop.
+Python executes `z *= step` in C, giving $\sin(ak + b)$ as `z1.imag` and $\cos(ck + d)$ as `z2.real` without calling `sin()` or `cos()` inside the inner loop. [Problem Source](https://icpc.kattis.com/problems/artichoke)
 
 ### Approach
 
